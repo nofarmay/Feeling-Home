@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#40E0D0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Feeling Home">
+    <link rel="apple-touch-icon" href="icons/icon-152x152.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='styles/main.css' rel='stylesheet' />
+    <link href='styles/messages.css' rel='stylesheet' />
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <!-- <img src="/img/4.png" width="140" height="80"> -->
+            <a href="login.html"><img src="/img/3.png" width="160" height="70"></a> 
+             <!-- יחסים מקוריים  630 350 773 323 -->
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a href="/">Calendar</a></li>
+                <li><a href="feed.html">Feed</a></li>
+                <li><a href="messges.html">Messages center</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+    </div>
+</nav>
+<br><br><br><br>
+<div class="messages">
+</div>
+<div class="contact-container">
+   <form id="messageForm">
+   <div class="messages-list">
+       <div class="message">
+           <h3>הזמנת עציצים לט"ו בשבט</h3>
+           <span class="status pending">בטיפול</span>
+           <p>אבקש להזמין עציצים לטובת אירוע הנטיעות</p>
+           <small>03.01.2025</small>
+           <br/>
+           <input class="hashev"  type="text" placeholder="השב" required>
+       </div>
+
+       <div class="message">
+           <h3>הצעה ליום גיבוש</h3>
+           <span class="status new">חדש</span>
+           <p>יש לי רעיון מגניב ליום גיבוש משפחות בפארק הלאומי אשמח  לשוחח עליו</p>
+           <small>04.01.2025</small>
+           <br/>
+           <input class="hashev" placeholder="השב" required>
+       </div>
+
+       <div class="message">
+           <h3>חוסר בציוד</h3>
+           <span class="status completed">טופל</span>
+           <p> אבקש 20 כיסאות תוספת לערב נשות המילואים</p>
+           <small>28.12.2024</small>
+           <br/>
+           <input class="hashev"  type="text" placeholder="השב" required>
+       </div>
+   </div>
+   </form>
+</div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+    <script src="scripts/bottom-nav.js"></script>
+</body>
+</html>

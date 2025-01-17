@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>אנשי קשר</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#40E0D0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Feeling Home">
+    <link rel="apple-touch-icon" href="icons/icon-152x152.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='styles/main.css' rel='stylesheet' />
+    <link href='styles/contacts.css' rel='stylesheet' />
+</head>
+<body>
+<div class="contacts-page">
+    <h1 class="header-title">אנשי קשר</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="חיפוש איש קשר..." />
+        <i class="fas fa-search search-icon"></i>
+    </div>
+
+    <div class="contacts-list" id="contactsList">
+        <!-- Contact items will be inserted here by JavaScript -->
+    </div>
+
+    <!-- Contact Details Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="modal-header">
+            <h2>פרטי איש קשר</h2>
+            <div class="modal-actions">
+                <button class="star-button">
+                    <i class="far fa-star"></i>
+                </button>
+                <button class="close-button" onclick="closeContactDetails()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="modal-content">
+            <div class="contact-info">
+                <img src="" alt="" class="contact-avatar" />
+                <h3 class="contact-name"></h3>
+                <p class="contact-role"></p>
+
+                <div class="phone">
+                    <i class="fas fa-phone"></i>
+                    <span></span>
+                </div>
+                <div class="email">
+                    <i class="fas fa-envelope"></i>
+                    <span></span>
+                </div>
+
+                <div class="contact-actions">
+                    <button class="send-message">
+                        <i class="fas fa-comment"></i>
+                        שלח הודעה
+                    </button>
+                    <button class="view-profile">
+                        <i class="fas fa-user"></i>
+                        צפה בפרופיל
+                    </button>
+                    <button class="share-contact">
+                        <i class="fas fa-share-alt"></i>
+                        שתף איש קשר
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered successfully:', registration);
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        });
+    }
+</script>
+<script src="scripts/contacts.js"></script>
+<script src="scripts/bottom-nav.js"></script>
+</body>
+</html>

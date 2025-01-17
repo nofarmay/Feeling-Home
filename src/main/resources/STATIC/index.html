@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Feeling Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#40E0D0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Feeling Home">
+    <link rel="apple-touch-icon" href="icons/icon-152x152.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='styles/main.css' rel='stylesheet' />
+    <link href='styles/calendar.css' rel='stylesheet' />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <script src='scripts/calendar.js' defer></script>
+    <!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+<nav class="nav">
+    <div class="logo">
+        <!--                 <img src="/img/4.png" width="140" height="80">-->
+        <a href="/"><img src="/img/3.png" width="160" height="70"></a>
+        <!--                  יחסים מקוריים  630 350 773 323-->
+    </div>
+    <div id="mainListDiv" class="main_list">
+        <ul class="navlinks">
+            <li><a href="#calendar-section">Calendar</a></li>
+            <li><a href="feed.html">Feed</a></li>
+            <li><a href="messges.html">Messages center</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div style="direction: ltr !important;">
+    <div id="bthn" lang="he" class="hostages-ticker"></div>
+</div>
+<script>
+    (function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://bringthemhomenow.net/1.1.0/hostages-ticker.js";
+        script.setAttribute(
+            "integrity",
+            "sha384-DHuakkmS4DXvIW79Ttuqjvl95NepBRwfVGx6bmqBJVVwqsosq8hROrydHItKdsne"
+        );
+        script.setAttribute("crossorigin", "anonymous");
+        document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+</script>
+
+<a href="/" id="emergencyButton">
+    <button class="btn-class-name">
+        <span class="back"></span>
+        <span class="front"></span>
+        <span class="text">חירום</span>
+    </button>
+</a>
+
+<section class="home">  <video class="video-bg" autoplay muted loop>
+    <source src="/videos/tadmitSderot.mp4" type="video/mp4">
+
+    Your browser does not support the video tag.
+</video></section>
+<!--    <section class="home" img src="https://files.summday.co.il/websites/help/css/banner_pc.jpg"></section>-->
+<div id="calendar-section">
+    <div id="calendar"></div>
+</div>
+</div>
+
+
+
+<!-- Modal for adding events -->
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close-button close">✕</span>
+            <button type="button" id="deleteBtn" class="delete-button">🗑️</button>
+        </div>
+        <h2 id="modalTitle">הוסף אירוע חדש</h2>
+        <form id="eventForm">
+            <!-- שדה משתתפים עובר למעלה -->
+
+            <div class="form-group">
+                <label for="eventTitle">כותרת האירוע:</label>
+                <input type="text" id="eventTitle" required>
+            </div>
+
+            <div class="form-group">
+                <label for="eventLocation">מיקום האירוע:</label>
+                <input type="text" id="eventLocation" required placeholder="הזן את מיקום האירוע">
+            </div>
+
+            <div class="form-group">
+                <label for="eventStart">שעת התחלה:</label>
+                <input type="time" id="eventStart" required>
+            </div>
+
+            <div class="form-group">
+                <label for="eventEnd">שעת סיום:</label>
+                <input type="time" id="eventEnd" required>
+            </div>
+            <div class="form-group">
+                <label for="maxParticipants">מספר משתתפים מקסימלי:</label>
+                <input type="number" id="maxParticipants" min="1" placeholder="הזן מספר משתתפים מקסימלי">
+            </div>
+
+            <!-- כפתורים בשורה אחת -->
+            <div class="modal-buttons">
+                <button type="submit" id="submitBtn" class="btn">הוסף אירוע</button>
+                <button type="button" id="attendBtn" class="btn">הירשם לאירוע</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="toast" class="toast"></div>
+</div>
+</div>
+<div class="welcome-popup" id="welcomePopup" style="visibility: hidden;">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup()">
+            <svg viewBox="0 0 24 24">
+                <path d="M12,3L20,9V21H15V14H9V21H4V9L12,3Z"/>
+            </svg>
+        </button>
+        <br>
+
+        <!-- <img src="/img/3.png" width="160" height="50" alt="Logo" class="popup-logo"> -->
+        <div class="popup-text">
+            <h2>ברוך שובך ניסו</h2>
+            <p>בהתחברות זו צברת 2 נקודות, סה"כ 74 נקודות</p>
+            <p class="home-text">תרגיש בבית... <br>🤍</p>
+            <!-- <p class="home-text">תרגיש בבית... <br>❤️</p> -->
+
+            <p class="team-text">צוות מרגישים בבית</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // פונקציה לבדיקה האם להציג את הפופ-אפ
+    function shouldShowPopup() {
+        // בדיקה האם הפופ-אפ כבר הוצג
+        return !sessionStorage.getItem('popupShown'); // שינוי מ-localStorage ל-sessionStorage
+    }
+
+    // פונקציה לסימון שהפופ-אפ הוצג
+    function markPopupAsShown() {
+        sessionStorage.setItem('popupShown', 'true');
+    }
+
+    // פונקציה לסגירת הפופ-אפ
+    function closePopup() {
+        const popup = document.getElementById('welcomePopup');
+        popup.style.visibility = 'hidden';
+        // שמירה שהפופ-אפ הוצג
+        markPopupAsShown();
+    }
+
+    // פונקציה להצגת הפופ-אפ
+    function showPopup() {
+        const popup = document.getElementById('welcomePopup');
+        popup.style.visibility = 'visible';
+    }
+
+    // אתחול הפופ-אפ בטעינת העמוד
+    window.onload = function() {
+        if (shouldShowPopup()) {
+            setTimeout(function() {
+                showPopup();
+            }, 5000); // 5 שניות
+        }
+    };
+</script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered successfully:', registration);
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        });
+    }
+</script>
+<script src="scripts/bottom-nav.js"></script>
+</body>
+</html>

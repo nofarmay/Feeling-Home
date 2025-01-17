@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    background: white;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 20%; /* הוקטן מ-25% */
+    padding: 1.5rem; /* הוקטן מ-2rem */
+    border-left: 1px solid #5CA1D4;
+    display: none;
+}
+
+.main-content {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center; /* ממרכז את התוכן */
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-right: 0.75rem;
+    color: #3A6A8E;
+}
+
+.menu-item {
+    display: flex;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: #2F4D6A;
+    font-weight: 600;
+    border-radius: 9999px;
+}
+
+.menu-item.active {
+    background: white;
+    border: 1px solid #5CA1D4;
+    font-weight: 700;
+}
+
+.menu-item:hover:not(.active) {
+    border: 1px solid #5CA1D4;
+}
+
+.profile-section {
+    max-width: 36rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.profile-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #3A6A8E;
+}
+
+.profile-image-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 4px;
+    border: 2px solid #5CA1D4;
+}
+
+.image-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: 1px solid #5CA1D4;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #5CA1D4;
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: #5CA1D4;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #2F4D6A;
+}
+
+input {
+    width: 100%;
+    padding: 0.625rem;
+    border: 1px solid #5CA1D4;
+    border-radius: 0.5rem;
+    background: #EFF6FC;
+    color: #2F4D6A;
+}
+
+.submit-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+/* נסיבות מיוחדות - צ'קבוקסים */
+.checkbox-group {
+    background: #EFF6FC;
+    border: 1px solid #5CA1D4;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-right: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    user-select: none;
+    color: #2F4D6A;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #64b5f6;
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #e3f2fd;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #64b5f6;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* רשתות חברתיות */
+.social-icons {
+    margin-top: 5.5rem;
+
+}
+
+.example-2 {
+    display: flex;
+    flex-direction: row; /* שינוי לסידור אופקי */
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.example-2 .icon-content {
+    position: relative;
+}
+
+.example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+.example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+    color: white;
+}
+
+.example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover .filled {
+    height: 100%;
+}
+
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+    background-color: #128c7e;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+    background-color: #3b5998;
+}
+
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(45deg, #405de6, #5b51db, #b33ab4, #c135b4, #e1306c, #fd1f1f);
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        display: block;
+    }
+    .main-content {
+        width: 80%; /* הותאם לרוחב הסיידבר החדש */
+    }
+}
+
+/* מרווחים כלליים */
+main, .container, .feed-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.nav {
+    z-index: 1000;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.profile-image-section {
+    position: relative; /* נשאר כמו שהיה, רק מוסיפים position relative */
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.edit-profile-button {
+    position: absolute;
+    top: -21px;
+    right: -20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #5CA1D4, #3A6A8E);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.edit-profile-button:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.edit-profile-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: white; /* שינוי לצבע לבן */
+    fill: none;
+}

@@ -1,0 +1,667 @@
+
+ @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+ html,
+ body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: "Quicksand", sans-serif;
+     font-size: 62.5%;
+     font-size: 10px;
+ }
+ /*-- Inspiration taken from abdo steif -->
+ /* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+ 
+ /* Navbar section */
+ 
+ .nav {
+     width: 100%;
+     height: 65px;
+     position: fixed;
+     line-height: 65px;
+     text-align: center;
+ }
+ 
+ .nav div.logo {
+     float: left;
+     width: auto;
+     height: auto;
+     padding-left: 3rem;
+ }
+ 
+ .nav div.logo a {
+     text-decoration: none;
+     color: #fff;
+     font-size: 2.5rem;
+ }
+ 
+ .nav div.logo a:hover {
+     color: #00E676;
+ }
+ 
+ .nav div.main_list {
+     height: 65px;
+     float: right;
+ }
+ 
+ .nav div.main_list ul {
+     width: 100%;
+     height: 65px;
+     display: flex;
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .nav div.main_list ul li {
+     width: auto;
+     height: 65px;
+     padding: 0;
+     padding-right: 3rem;
+ }
+ 
+ .nav div.main_list ul li a {
+     text-decoration: none;
+     color: #1f1515;
+     line-height: 65px;
+     font-size: 2.4rem;
+ }
+ 
+ .nav div.main_list ul li a:hover {
+     color: #d5d8d7;
+ }
+ 
+ 
+ /* Home section */
+ 
+ .home {
+     width: 100%;
+     height: 100vh;
+     background-position: center top;
+     background-size:cover;
+ }
+ 
+ .navTrigger {
+     display: none;
+ }
+ 
+ .nav {
+     padding-top: 20px;
+     padding-bottom: 20px;
+     -webkit-transition: all 0.4s ease;
+     transition: all 0.4s ease;
+ }
+ 
+ 
+ /* Media qurey section */
+ 
+ @media screen and (min-width: 768px) and (max-width: 1024px) {
+     .container {
+         margin: 0;
+     }
+ }
+ 
+ @media screen and (max-width:768px) {
+     .navTrigger {
+         display: block;
+     }
+     .nav div.logo {
+         margin-left: 15px;
+     }
+     .nav div.main_list {
+         width: 100%;
+         height: 0;
+         overflow: hidden;
+     }
+     .nav div.show_list {
+         height: auto;
+         display: none;
+     }
+     .nav div.main_list ul {
+         flex-direction: column;
+         width: 100%;
+         height: 100vh;
+         right: 0;
+         left: 0;
+         bottom: 0;
+         background-color: #111;
+         /*same background color of navbar*/
+         background-position: center top;
+     }
+     .nav div.main_list ul li {
+         width: 100%;
+         text-align: right;
+     }
+     .nav div.main_list ul li a {
+         text-align: center;
+         width: 100%;
+         font-size: 3rem;
+         padding: 20px;
+     }
+     .nav div.media_button {
+         display: block;
+     }
+ }
+ 
+ 
+ /* Animation */
+ /* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+ 
+ .navTrigger {
+     cursor: pointer;
+     width: 30px;
+     height: 25px;
+     margin: auto;
+     position: absolute;
+     right: 30px;
+     top: 0;
+     bottom: 0;
+ }
+ 
+ .navTrigger i {
+     background-color: #fff;
+     border-radius: 2px;
+     content: '';
+     display: block;
+     width: 100%;
+     height: 4px;
+ }
+ 
+ .navTrigger i:nth-child(1) {
+     -webkit-animation: outT 0.8s backwards;
+     animation: outT 0.8s backwards;
+     -webkit-animation-direction: reverse;
+     animation-direction: reverse;
+ }
+ 
+ .navTrigger i:nth-child(2) {
+     margin: 5px 0;
+     -webkit-animation: outM 0.8s backwards;
+     animation: outM 0.8s backwards;
+     -webkit-animation-direction: reverse;
+     animation-direction: reverse;
+ }
+ 
+ .navTrigger i:nth-child(3) {
+     -webkit-animation: outBtm 0.8s backwards;
+     animation: outBtm 0.8s backwards;
+     -webkit-animation-direction: reverse;
+     animation-direction: reverse;
+ }
+ 
+ .navTrigger.active i:nth-child(1) {
+     -webkit-animation: inT 0.8s forwards;
+     animation: inT 0.8s forwards;
+ }
+ 
+ .navTrigger.active i:nth-child(2) {
+     -webkit-animation: inM 0.8s forwards;
+     animation: inM 0.8s forwards;
+ }
+ 
+ .navTrigger.active i:nth-child(3) {
+     -webkit-animation: inBtm 0.8s forwards;
+     animation: inBtm 0.8s forwards;
+ }
+ 
+ @-webkit-keyframes inM {
+     50% {
+         -webkit-transform: rotate(0deg);
+     }
+     100% {
+         -webkit-transform: rotate(45deg);
+     }
+ }
+ 
+ @keyframes inM {
+     50% {
+         transform: rotate(0deg);
+     }
+     100% {
+         transform: rotate(45deg);
+     }
+ }
+ 
+ @-webkit-keyframes outM {
+     50% {
+         -webkit-transform: rotate(0deg);
+     }
+     100% {
+         -webkit-transform: rotate(45deg);
+     }
+ }
+ 
+ @keyframes outM {
+     50% {
+         transform: rotate(0deg);
+     }
+     100% {
+         transform: rotate(45deg);
+     }
+ }
+ 
+ @-webkit-keyframes inT {
+     0% {
+         -webkit-transform: translateY(0px) rotate(0deg);
+     }
+     50% {
+         -webkit-transform: translateY(9px) rotate(0deg);
+     }
+     100% {
+         -webkit-transform: translateY(9px) rotate(135deg);
+     }
+ }
+ 
+ @keyframes inT {
+     0% {
+         transform: translateY(0px) rotate(0deg);
+     }
+     50% {
+         transform: translateY(9px) rotate(0deg);
+     }
+     100% {
+         transform: translateY(9px) rotate(135deg);
+     }
+ }
+ 
+ @-webkit-keyframes outT {
+     0% {
+         -webkit-transform: translateY(0px) rotate(0deg);
+     }
+     50% {
+         -webkit-transform: translateY(9px) rotate(0deg);
+     }
+     100% {
+         -webkit-transform: translateY(9px) rotate(135deg);
+     }
+ }
+ 
+ @keyframes outT {
+     0% {
+         transform: translateY(0px) rotate(0deg);
+     }
+     50% {
+         transform: translateY(9px) rotate(0deg);
+     }
+     100% {
+         transform: translateY(9px) rotate(135deg);
+     }
+ }
+ 
+ @-webkit-keyframes inBtm {
+     0% {
+         -webkit-transform: translateY(0px) rotate(0deg);
+     }
+     50% {
+         -webkit-transform: translateY(-9px) rotate(0deg);
+     }
+     100% {
+         -webkit-transform: translateY(-9px) rotate(135deg);
+     }
+ }
+ 
+ @keyframes inBtm {
+     0% {
+         transform: translateY(0px) rotate(0deg);
+     }
+     50% {
+         transform: translateY(-9px) rotate(0deg);
+     }
+     100% {
+         transform: translateY(-9px) rotate(135deg);
+     }
+ }
+ 
+ @-webkit-keyframes outBtm {
+     0% {
+         -webkit-transform: translateY(0px) rotate(0deg);
+     }
+     50% {
+         -webkit-transform: translateY(-9px) rotate(0deg);
+     }
+     100% {
+         -webkit-transform: translateY(-9px) rotate(135deg);
+     }
+ }
+ 
+ @keyframes outBtm {
+     0% {
+         transform: translateY(0px) rotate(0deg);
+     }
+     50% {
+         transform: translateY(-9px) rotate(0deg);
+     }
+     100% {
+         transform: translateY(-9px) rotate(135deg);
+     }
+ }
+ 
+ .affix {
+     padding: 0;
+     background-color: #111;
+ }
+ 
+ 
+ 
+ .myH2 {
+     text-align:center;
+     font-size: 4rem;
+ }
+ .myP {
+     text-align: justify;
+     padding-left:15%;
+     padding-right:15%;
+     font-size: 20px;
+ }
+ @media all and (max-width:700px){
+     .myP {
+         padding:2%;
+     }
+ }
+
+
+/* הוסף מרווח עליון לכל התוכן */
+main, .container, .feed-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+     /* גובה הנאבבר + קצת מרווח */
+}
+
+/* וודא שהנאבבר תמיד מעל התוכן */
+.nav {
+    z-index: 1000;
+}
+
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background: #f5f5f5;
+} */
+
+.welcome-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(64,224,208,0.2);
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+    animation: popIn 0.3s ease-out;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+.close-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #40E0D0;
+    transition: fill 0.3s ease;
+}
+
+.close-btn:hover svg {
+    fill: #64b5f6;
+}
+
+.popup-logo {
+    margin-bottom: 1rem;
+    width: 100px;
+    height: auto;
+}
+
+.popup-text h2 {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    color: #40E0D0;
+}
+
+.popup-text p {
+    margin: 0.6rem 0;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.home-text {
+    color: #64b5f6;
+    font-size: 1.1rem !important;
+    margin: 1.2rem 0 !important;
+}
+
+.team-text {
+    color: #666;
+    font-style: italic;
+    font-size: 0.8rem !important;
+    text-align: left;
+    margin-top: 1.5rem !important;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* From Uiverse.io by mrhyddenn */ 
+.shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+  }
+  
+  .shadow__btn {
+    background: rgb(255, 0, 0);
+    box-shadow: 0 0 25px rgb(255, 0, 0);
+  }
+  
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
+  }
+
+  /* From Uiverse.io by catraco */ 
+  .btn-class-name {
+    --primary: 255, 0, 0;
+    --secondary: 150, 0, 0;
+    width: 60px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    outline: 10px solid rgb(var(--primary), .5);
+    border-radius: 100%;
+    position: relative;
+    transition: .3s;
+  }
+  
+  .btn-class-name .back {
+    background: rgb(var(--secondary));
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .btn-class-name .front {
+    background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+    box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+    border-radius: 100%;
+    position: absolute;
+    border: 1px solid rgb(var(--secondary));
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: inherit;
+    transform: translateY(-15%);
+    transition: .15s;
+    z-index: 1;
+  }
+  
+  .btn-class-name:active .front {
+    transform: translateY(0%);
+    box-shadow: 0 0;
+  }
+  
+  .btn-class-name .text {
+    z-index: 2;
+    position: absolute;
+    color: #1f1515;
+    transform: translate(1.4rem, -1.2rem);  /* שרשור ההזזות */
+  }
+
+  #emergencyButton {
+    position: fixed;
+    bottom: 20px;
+    right:20px;
+    z-index: 1001;
+  }
+
+  html {
+    scroll-behavior: smooth;
+}
+
+.nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* מספר גבוה כדי שיהיה מעל כל התוכן */
+    /* background: rgba(255, 255, 255, 0.1);  */
+    /* backdrop-filter: blur(5px);  */
+}
+
+
+/* הקטנת הקלנדר */
+#calendar-section {
+    max-width: 80%; /* או כל גודל אחר שתרצי */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#calendar {
+    height: 80vh; /* גובה יחסי למסך - התאימי כרצונך */
+    max-height: 800px; /* גובה מקסימלי */
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* IE and Edge */
+* {
+    -ms-overflow-style: none;
+}
+
+/* שמירה על תכונות הגלילה */
+html, body {
+    max-width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+ /* תחילה נסתיר את הניווט התחתון בכל המסכים */
+ @media screen and (max-width: 390px) {
+     .nav {
+         display: none !important;
+     }
+
+     .bottom-nav {
+         display: flex !important;
+         position: fixed;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         background: white;
+         padding: 15px 20px; /* הקטנתי את הפדינג בצדדים */
+         border-radius: 25px 25px 0 0;
+         justify-content: space-between;
+         align-items: center;
+         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+         z-index: 9999;
+         max-width: 100%;
+         margin: 0 auto;
+     }
+
+     .nav-item {
+         text-decoration: none;
+         color: #666;
+         padding: 0 5px; /* מרווח קטן יותר בין האייקונים */
+     }
+
+     .nav-item i {
+         font-size: 26px; /* הגדלת האייקונים */
+     }
+
+     .nav-item.active i {
+         color: #40E0D0;
+     }
+
+     body {
+         padding-bottom: 70px !important;
+     }
+
+     #emergencyButton {
+         bottom: 80px !important;
+     }
+ }
