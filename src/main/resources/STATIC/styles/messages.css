@@ -166,7 +166,6 @@ small {
 
 }
 
-
 /* הוסף מרווח עליון לכל התוכן */
 main, .container, .feed-container {
     padding-top: 100px;
@@ -177,4 +176,55 @@ main, .container, .feed-container {
 /* וודא שהנאבבר תמיד מעל התוכן */
 .nav {
     z-index: 1000;
+}
+
+@media (max-width: 767px) {
+    .contact-container {
+        width: 90%;
+        /*padding: 10px;*/
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    .status {
+        font-size: 1rem;
+    }
+
+
+    .hashev {
+        width: 40%;
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    main, .container, .feed-container {
+        padding-top: 20px;
+        padding-bottom: 80px;
+    }
+
+    .message {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .message h3 {
+        font-size: 1.1rem;
+    }
+
+    .message p {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    .message .hashev {
+        margin-top: 10px;
+    }
+
+    .contact-container {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+    }
 }

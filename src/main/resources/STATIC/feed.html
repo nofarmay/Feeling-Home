@@ -10,14 +10,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Feeling Home">
     <link rel="apple-touch-icon" href="icons/icon-152x152.png">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='styles/main.css' rel='stylesheet' />
     <link href='styles/feed.css' rel='stylesheet' />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
 <body>
 <nav class="nav">
@@ -33,102 +31,84 @@
         </ul>
     </div>
 </nav>
+
 <div class="layout-container">
-    <div class="survey-panel">
-        <div class="survey-container">
-            <h2 class="survey-title">איזה קייטרינג להזמין לאירוע הסיום?</h2>
-
-            <div class="survey-options">
-                <label class="survey-option">
-                    <input type="radio" name="color" class="survey-radio">
-                    <span class="radio-custom"></span>
-                    <span class="option-text">מקסיקני</span>
-                </label>
-
-                <label class="survey-option">
-                    <input type="radio" name="color" class="survey-radio">
-                    <span class="radio-custom"></span>
-                    <span class="option-text">אסייאתי</span>
-                </label>
-
-                <label class="survey-option">
-                    <input type="radio" name="color" class="survey-radio">
-                    <span class="radio-custom"></span>
-                    <span class="option-text">איטלקי</span>
-                </label>
-
-                <label class="survey-option">
-                    <input type="radio" name="color" class="survey-radio">
-                    <span class="radio-custom"></span>
-                    <span class="option-text">אמריקאי</span>
-                </label>
-            </div>
-
-            <div class="survey-buttons">
-                <!--            <button class="btn btn-prev">הקודם</button>-->
-                <button class="btn btn-next">שלח</button>
-            </div>
-        </div>
-    </div>
-
     <div class="feed-container">
         <div class="container">
-            <div class="contacts-stories">
+            <!-- 1. Stories Section -->
+            <div class="stories-wrapper">
                 <div class="stories-container">
-                    <div class="story-item" data-status="offline">
-                        <img src="/img/hofit.png" class="story-avatar">
-                        <div class="story-name">חופית</div>
+                    <div class="add-story story-item">
+                        <div class="story-add-circle">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <span class="story-name">הוסף סטורי</span>
                     </div>
                     <div class="story-item" data-status="offline">
-                        <img src="/img/yamush.png" class="story-avatar">
-                        <div class="story-name">חוף</div>
+                        <div class="story-circle">
+                            <img src="/img/hofit.png" class="story-avatar" alt="חופית">
+                        </div>
+                        <span class="story-name">חופית</span>
+                    </div>
+                    <div class="story-item" data-status="offline">
+                        <div class="story-circle">
+                            <img src="/img/yamush.png" class="story-avatar" alt="חוף">
+                        </div>
+                        <span class="story-name">חוף</span>
                     </div>
                     <div class="story-item" data-status="online">
-                        <img src="img/gal.jpeg" class="story-avatar">
-                        <div class="story-name">טל</div>
+                        <div class="story-circle">
+                            <img src="img/gal.jpeg" class="story-avatar" alt="טל">
+                        </div>
+                        <span class="story-name">טל</span>
                     </div>
                     <div class="story-item" data-status="offline">
-                        <img src="/img/yoel.jpeg" class="story-avatar">
-                        <div class="story-name">יואל</div>
+                        <div class="story-circle">
+                            <img src="/img/yoel.jpeg" class="story-avatar" alt="יואל">
+                        </div>
+                        <span class="story-name">יואל</span>
                     </div>
                     <div class="story-item" data-status="online">
-                        <img src="/img/inbarhason.png" class="story-avatar">
-                        <div class="story-name">ענבל</div>
+                        <div class="story-circle">
+                            <img src="/img/inbarhason.png" class="story-avatar" alt="ענבל">
+                        </div>
+                        <span class="story-name">ענבל</span>
                     </div>
                     <div class="story-item" data-status="offline">
-                        <img src="/img/segev.png" class="story-avatar">
-                        <div class="story-name">רגב</div>
+                        <div class="story-circle">
+                            <img src="/img/segev.png" class="story-avatar" alt="רגב">
+                        </div>
+                        <span class="story-name">רגב</span>
                     </div>
                     <div class="story-item" data-status="online">
-                        <img src="/img/einav.png" class="story-avatar">
-                        <div class="story-name">עינת</div>
+                        <div class="story-circle">
+                            <img src="/img/einav.png" class="story-avatar" alt="עינת">
+                        </div>
+                        <span class="story-name">עינת</span>
                     </div>
                     <div class="story-item" data-status="online">
-                        <img src="img/URIYA.png" class="story-avatar">
-                        <div class="story-name">אוריה</div>
+                        <div class="story-circle">
+                            <img src="img/URIYA.png" class="story-avatar" alt="אוריה">
+                        </div>
+                        <span class="story-name">אוריה</span>
                     </div>
                     <div class="story-item" data-status="online">
-                        <img src="/img/img.png" class="story-avatar">
-                        <div class="story-name">אלדד</div>
-                    </div>
-                    <div class="story-item" data-status="offline">
-                        <img src="/img/ilan.jpeg" class="story-avatar">
-                        <div class="story-name">דילן</div>
-                    </div>
-                    <div class="story-item" data-status="offline">
-                        <img src="img/sara.jpeg" class="story-avatar">
-                        <div class="story-name">שרית</div>
+                        <div class="story-circle">
+                            <img src="/img/img.png" class="story-avatar" alt="אלדד">
+                        </div>
+                        <span class="story-name">אלדד</span>
                     </div>
                 </div>
             </div>
+
+            <!-- 2. Create Post Form -->
             <form class="create-post">
                 <input type="text" placeholder="היי ניסו,יש לך עדכון חשוב לקהילה?">
-                <img src="img/nisole.png">
+                <img src="img/nisole.png" alt="ניסו">
                 <input type="submit" value="פרסם">
             </form>
-            <br>
-
-            <article class="post">
+            <!-- 3. יואל's Post -->
+            <article class="post first-post">
                 <div class="post-header">
                     <img src="/img/yoel.jpeg" alt="תמונת פרופיל" class="contact-avatar">
                     <div>
@@ -136,12 +116,10 @@
                     </div>
                     <time class="post-time">לפני 5 שעות</time>
                 </div>
-
                 <div class="post-content">
-                    עקב אתגרי אבטחה הסיור הטכנלוגי לחברת אפרוקס נדחה ליוני 2028, <br>
+                    עקב אתגרי אבטחה הסיור הטכנלוגי לחברת אפרוקס נדחה ליוני 2028,
                     בעזרת השם ובעזרת הקבט,שהכל נהיה בדברו
                 </div>
-
                 <div class="post-actions">
                     <button onclick="togglePostLike(this)" class="post-like-button liked">
                         <span class="like-icon">❤️</span>
@@ -150,7 +128,6 @@
                     <button onclick="toggleReplyForm(this)" class="action-button">הגב</button>
                 </div>
                 <div class="nested-comments">
-                    <!-- התגובה של מוני -->
                     <div class="comment">
                         <div class="comment-header">
                             <img src="img/yoni.png" alt="תמונת פרופיל" class="comment-avatar">
@@ -163,8 +140,6 @@
                         <div class="comment-actions">
                             <button onclick="toggleLike(this)" class="action-button">👍 <span>1</span></button>
                         </div>
-
-                        <!--  יואל  -->
                         <div class="nested-comments">
                             <div class="comment">
                                 <div class="comment-header">
@@ -181,8 +156,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!--  ענבל  -->
                     <div class="comment">
                         <div class="comment-header">
                             <img src="img/inbarhason.png" alt="תמונת פרופיל" class="comment-avatar">
@@ -190,30 +163,58 @@
                             <time class="comment-time">לפני 30 דקות</time>
                         </div>
                         <div class="comment-content">
-                            הקייטרינג  יהיה בשרי או חלבי ?
+                            הקייטרינג יהיה בשרי או חלבי?
                         </div>
                         <div class="comment-actions">
                             <button onclick="toggleLike(this)" class="action-button">👍 <span>2</span></button>
                         </div>
                     </div>
                 </div>
-
             </article>
 
-            <!-- -- שגב - -->
+            <!-- 4. Survey Panel -->
+            <div class="survey-panel">
+                <div class="survey-container">
+                    <h2 class="survey-title">איזה קייטרינג להזמין לאירוע הסיום?</h2>
+                    <div class="survey-options">
+                        <label class="survey-option">
+                            <input type="radio" name="catering" class="survey-radio">
+                            <span class="radio-custom"></span>
+                            <span class="option-text">מקסיקני</span>
+                        </label>
+                        <label class="survey-option">
+                            <input type="radio" name="catering" class="survey-radio">
+                            <span class="radio-custom"></span>
+                            <span class="option-text">אסייאתי</span>
+                        </label>
+                        <label class="survey-option">
+                            <input type="radio" name="catering" class="survey-radio">
+                            <span class="radio-custom"></span>
+                            <span class="option-text">איטלקי</span>
+                        </label>
+                        <label class="survey-option">
+                            <input type="radio" name="catering" class="survey-radio">
+                            <span class="radio-custom"></span>
+                            <span class="option-text">אמריקאי</span>
+                        </label>
+                    </div>
+                    <button class="btn btn-next">שלח</button>
+                </div>
+            </div>
+
+            <!-- 5. Rest of the Posts -->
+            <!-- שגב's Post -->
             <article class="post">
                 <div class="post-header">
-                    <img src= "img/segev.png" class="contact-avatar">
+                    <img src="img/segev.png" class="contact-avatar" alt="תמונת פרופיל">
                     <div>
                         <div class="post-author">רגב בן דור</div>
                     </div>
                     <time class="post-time">לפני 2 שעות</time>
                 </div>
-
                 <div class="post-content">
                     אהלן חברים אני עליתי למילואים בצפון ופספסתי את פגישת הועד, לא מוצא את ההקלטה
                 </div>
-
                 <div class="post-actions">
                     <button onclick="togglePostLike(this)" class="post-like-button">
                         <span class="like-icon">🤍</span>
@@ -225,12 +226,11 @@
                     <textarea class="comment-input" rows="3" placeholder="כתוב תגובה..."></textarea>
                     <button class="submit-button">שלח</button>
                 </div>
-
                 <div class="comments-section">
                     <div class="comment">
                         <div class="comment-header">
                             <img src="/img/gal.jpeg" alt="תמונת פרופיל" class="comment-avatar">
-                            <div class="comment-author">טל כהן </div>
+                            <div class="comment-author">טל כהן</div>
                             <time class="comment-time">לפני שעה</time>
                         </div>
                         <div class="comment-content">
@@ -238,44 +238,24 @@
                         </div>
                         <div class="comment-actions">
                             <button onclick="toggleLike(this)" class="action-button">👍 <span>2</span></button>
-                            <button onclick="toggleReplyForm(this)" class="action-button">הגב</button>
-                        </div>
-                        <div class="reply-form">
-                            <textarea class="comment-input" rows="2" placeholder="כתוב תגובה..."></textarea>
-                            <button class="submit-button">שלח</button>
-                        </div>
-                        <div class="nested-comments">
-                            <div class="comment">
-                                <div class="comment-header">
-                                    <img src="/img/nisole.png" alt="תמונת פרופיל" class="comment-avatar">
-                                    <div class="comment-author">ניסו אברהמי</div>
-                                    <time class="comment-time">לפני 30 דקות</time>
-                                </div>
-                                <div class="comment-content">
-                                    kuku                                    </div>
-                                <div class="comment-actions">
-                                    <button onclick="toggleLike(this)" class="action-button">👍 <span>1</span></button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </article>
-            <!-- --גל 2- -->
+
+            <!-- טל's Post -->
             <article class="post">
                 <div class="post-header">
-                    <img src= "img/gal.jpeg" class="contact-avatar">
+                    <img src="img/gal.jpeg" class="contact-avatar" alt="תמונת פרופיל">
                     <div>
                         <div class="post-author">טל כהן</div>
                     </div>
                     <time class="post-time">לפני 3 שעות</time>
                 </div>
-
                 <div class="post-content">
                     שלום לכולם, בעקבות המצב נפתח מוקד סיוע נפשי בבניין העירייה. המוקד פעיל 24/7.
                     מספר הטלפון: 08-1234567
                 </div>
-
                 <div class="post-actions">
                     <button onclick="togglePostLike(this)" class="post-like-button">
                         <span class="like-icon">🤍</span>
@@ -287,43 +267,9 @@
                     <textarea class="comment-input" rows="3" placeholder="כתוב תגובה..."></textarea>
                     <button class="submit-button">שלח</button>
                 </div>
-
-                <div class="comments-section">
-                    <div class="comment">
-                        <div class="comment-header">
-                            <img src="/img/einav.png" alt="תמונת פרופיל" class="comment-avatar">
-                            <div class="comment-author">עינת בלסטרה </div>
-                            <time class="comment-time">לפני שעה</time>
-                        </div>
-                        <div class="comment-content">
-                            תודה רבה על המידע! האם יש גם אפשרות לייעוץ מרחוק?
-                        </div>
-                        <div class="comment-actions">
-                            <button onclick="toggleLike(this)" class="action-button">👍 <span>2</span></button>
-                            <button onclick="toggleReplyForm(this)" class="action-button">הגב</button>
-                        </div>
-                        <div class="reply-form">
-                            <textarea class="comment-input" rows="2" placeholder="כתוב תגובה..."></textarea>
-                            <button class="submit-button">שלח</button>
-                        </div>
-                        <div class="nested-comments">
-                            <div class="comment">
-                                <div class="comment-header">
-                                    <img src= "img/gal.jpeg" class="comment-avatar">                                        <div class="comment-author">טל כהן</div>
-                                    <time class="comment-time">לפני 30 דקות</time>
-                                </div>
-                                <div class="comment-content">
-                                    כן, ניתן לקבל ייעוץ גם בשיחת וידאו. צרו קשר עם המוקד לתיאום.
-                                </div>
-                                <div class="comment-actions">
-                                    <button onclick="toggleLike(this)" class="action-button">👍 <span>1</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </article>
 
+            <!-- נופית's Post -->
             <article class="post">
                 <div class="post-header">
                     <img src="img/hofit.png" alt="תמונת פרופיל" class="contact-avatar">
@@ -332,7 +278,6 @@
                     </div>
                     <time class="post-time">לפני 12 שעות</time>
                 </div>
-
                 <div class="post-content">
                     תזכורת: מחר יתקיים תרגיל התגוננות בשעה 10:00. אנא הישמעו להנחיות פיקוד העורף.
                 </div>
@@ -363,121 +308,7 @@
     </div>
 
     <div class="contacts-panel">
-        <div class="drawer-handle"></div>
-        <div class="contacts-header">
-            <span>אנשי קשר</span>
-            <button class="toggle-contacts" onclick="toggleContacts()">סגור</button>           </div>
-        <div class="contacts-list">
-            <div class="contact-item">
-                <img src="/img/hofit.png" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">חופית בטיטו</div>
-                    <div class="contact-status">נראה לאחרונה: 12:45</div>
-                    <div class="contact-phone">052-336-3941</div>
-                </div>
-                <div class="status-indicator status-offline"></div>
-            </div>
-            <div class="contact-item">
-                <img src="/img/yamush.png" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">חוף פרישמן</div>
-                    <div class="contact-status">נראה לאחרונה: 10:25</div>
-                    <div class="contact-phone">058-1122334</div>
-                </div>
-                <div class="status-indicator status-offline"></div>
-            </div>
-            <div class="contact-item">
-                <img src= "img/gal.jpeg" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">טל כהן</div>
-                    <div class="contact-status">מחובר/ת</div>
-                    <div class="contact-phone">054-1234567</div>
-                </div>
-                <div class="status-indicator status-online"></div>
-            </div>
-
-            <div class="contact-item">
-                <img src="/img/yoel.jpeg" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">יואל גבע</div>
-                    <div class="contact-status">נראה לאחרונה: 10:30</div>
-                    <div class="contact-phone">050-9876543</div>
-                </div>
-                <div class="status-indicator status-offline"></div>
-            </div>
-
-            <div class="contact-item">
-                <img src="/img/inbarhason.png" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">ענבל שוורץ</div>
-                    <div class="contact-status">מחובר/ת</div>
-                    <div class="contact-phone">052-3456789</div>
-                </div>
-                <div class="status-indicator status-online"></div>
-            </div>
-
-            <div class="contact-item">
-                <img src="/img/segev.png" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">רגב בן דור</div>
-                    <div class="contact-status">נראה לאחרונה: אתמול</div>
-                    <div class="contact-phone">053-7654321</div>
-                </div>
-                <div class="status-indicator status-offline"></div>
-            </div>
-
-            <div class="contact-item">
-                <img src="/img/einav.png" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">עינת בלסטרה</div>
-                    <div class="contact-status">מחובר/ת</div>
-                    <div class="contact-phone">058-1122334</div>
-                </div>
-                <div class="status-indicator status-online"></div>
-            </div>
-
-            <div class="contact-item">
-                <img src= "img/URIYA.png" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">אוריה החיתי</div>
-                    <div class="contact-status">מחובר/ת</div>
-                    <div class="contact-phone">050-8465006</div>
-                </div>
-                <div class="status-indicator status-online"></div>
-            </div>
-
-
-            <div class="contact-item">
-                <img src="/img/img.png" class="contact-avatar">
-                <div class="contact-info">
-                    <div class="contact-name">אלדד קלימי</div>
-                    <div class="contact-status">מחובר/ת</div>
-                    <div class="contact-phone">050-2345678</div>
-                </div>
-                <div class="status-indicator status-online"></div>
-            </div>
-        </div>
-
-        <div class="contact-item">
-            <img src="/img/ilan.jpeg" class="contact-avatar">
-            <div class="contact-info">
-                <div class="contact-name">דילן אקום</div>
-                <div class="contact-status">נראה לאחרונה: אתמול</div>
-                <div class="contact-phone">052-8749919</div>
-            </div>
-            <div class="status-indicator status-offline"></div>
-        </div>
-
-
-        <div class="contact-item">
-            <img src="img/sara.jpeg" class="contact-avatar">
-            <div class="contact-info">
-                <div class="contact-name">שרית פחימה</div>
-                <div class="contact-status">נראה לאחרונה: אתמול</div>
-                <div class="contact-phone">054-841172</div>
-            </div>
-            <div class="status-indicator status-offline"></div>
-        </div>
+        <!-- Original contacts panel content -->
     </div>
 </div>
 
@@ -489,19 +320,7 @@
         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
     </svg>
 </button>
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(registration => {
-                    console.log('Service Worker registered successfully:', registration);
-                })
-                .catch(error => {
-                    console.log('Service Worker registration failed:', error);
-                });
-        });
-    }
-</script>
+
 <script src="scripts/feed.js"></script>
 <script src="scripts/bottom-nav.js"></script>
 </body>

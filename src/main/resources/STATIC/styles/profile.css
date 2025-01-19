@@ -54,7 +54,7 @@
 
 .profile-section {
     max-width: 36rem;
-    margin: 2rem auto;
+    margin: auto;
     padding: 0 1.5rem;
 }
 
@@ -74,8 +74,8 @@
 }
 
 .profile-image {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     padding: 4px;
@@ -303,6 +303,7 @@ input {
     background: linear-gradient(45deg, #405de6, #5b51db, #b33ab4, #c135b4, #e1306c, #fd1f1f);
 }
 
+/*DESKTOP*/
 @media (min-width: 768px) {
     .sidebar {
         display: block;
@@ -379,3 +380,61 @@ main, .container, .feed-container {
     stroke: white; /* שינוי לצבע לבן */
     fill: none;
 }
+
+
+.container {
+    display: flex;
+    background: white;
+    min-height: 100vh;
+    padding-top: 1rem; /* הוסף שורה זו */
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 4px;
+    border: 2px solid #5CA1D4;
+}
+
+.edit-profile-button {
+    top: -15px; /* התאם את המיקום בהתאם לגודל התמונה החדש */
+    right: -15px;
+    width: 30px;
+    height: 30px;
+}
+
+.edit-profile-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.profile-section {
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+}
+
+.form-group, .form-row {
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    margin-top: 2rem;
+}
+
+#dob {
+    width: 100%;
+    padding: 0.625rem;
+    border: 1px solid #5CA1D4;
+    border-radius: 0.5rem;
+    background: #EFF6FC;
+    color: #2F4D6A;
+    box-sizing: border-box;
+    -webkit-appearance: none; /* להסרת העיצוב המובנה בדפדפנים מסוימים */
+    -moz-appearance: none;
+    appearance: none;
+    height: 32px;
+}
+

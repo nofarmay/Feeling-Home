@@ -1,14 +1,18 @@
+// קביעת כתובת ה-API לפי הסביבה
+const API_URL = window.location.hostname === 'localhost'
+    ? 'http://localhost:8080'
+    : 'https://a833-2a00-a041-24a2-5200-5094-6d5e-6fe2-c70d.ngrok-free.app';  // החלף עם כתובת ה-ngrok שלך
+
 // משתנים גלובליים
 let currentEvent = null;
 let selectedDate;
-let calendar;  // NEW: הפך להיות גלובלי כדי שכל הפונקציות יוכלו לגשת אליו
+let calendar;
 const userId = 1;
-// const userId = getCurrentUserId();
 
 // פונקציות תקשורת עם ה-API
 async function fetchEvents() {
     try {
-        const response = await fetch('http://localhost:8080/api/events');
+        const response = await fetch(`${API_URL}/api/events`);
         const events = await response.json();
         return events.map(event => ({
             id: event.eventId,
@@ -28,11 +32,10 @@ async function fetchEvents() {
     }
 }
 
-
 async function createEvent(eventData) {
     try {
         console.log('Sending event data:', eventData);
-        const response = await fetch('http://localhost:8080/api/events', {
+        const response = await fetch(`${API_URL}/api/events`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +57,7 @@ async function createEvent(eventData) {
 }
 
 async function updateEvent(eventId, eventData) {
-    const response = await fetch(`http://localhost:8080/api/events/${eventId}`, {
+    const response = await fetch(`${API_URL}/api/events/${eventId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -65,14 +68,14 @@ async function updateEvent(eventId, eventData) {
 }
 
 async function deleteEvent(eventId) {
-    await fetch(`http://localhost:8080/api/events/${eventId}`, {
+    await fetch(`${API_URL}/api/events/${eventId}`, {
         method: 'DELETE'
     });
 }
 
 async function registerForEvent(eventId, userId) {
     try {
-        const response = await fetch('http://localhost:8080/api/rsvp', {
+        const response = await fetch(`${API_URL}/api/rsvp`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -94,8 +97,7 @@ async function registerForEvent(eventId, userId) {
 
 async function checkRegistrationStatus(eventId, userId) {
     try {
-        // שינוי הנתיב לנתיב הנכון
-        const response = await fetch(`http://localhost:8080/api/rsvp/status?eventId=${eventId}&userId=${userId}`);
+        const response = await fetch(`${API_URL}/api/rsvp/status?eventId=${eventId}&userId=${userId}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -104,10 +106,9 @@ async function checkRegistrationStatus(eventId, userId) {
     }
 }
 
-// במקום הפונקציה הנוכחית
 async function cancelEventRegistration(eventId, userId) {
     try {
-        const response = await fetch(`http://localhost:8080/api/rsvp/cancel?eventId=${eventId}&userId=${userId}`, {
+        const response = await fetch(`${API_URL}/api/rsvp/cancel?eventId=${eventId}&userId=${userId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -118,7 +119,6 @@ async function cancelEventRegistration(eventId, userId) {
             throw new Error('Failed to cancel registration');
         }
 
-        // נעביר את הרענון ללוגיקה של הכפתור
         return true;
 
     } catch (error) {
@@ -195,9 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             selectedDate = info.start;
             document.getElementById('eventModal').style.display = 'block';
-        },
-
-        eventClick: async function (info) {
+        },eventClick: async function (info) {
             currentEvent = info.event;
             const userId = 1;
 
@@ -227,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 attendBtn.className = 'btn disabled';
                 attendBtn.disabled = true;
             }
-
 
             const formatTime = (date) => {
                 return date ? date.toLocaleTimeString('he-IL', {hour: '2-digit', minute: '2-digit'}) : '';
@@ -344,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-// בטיפול בכפתור
+    // טיפול בכפתור הרשמה
     document.getElementById('attendBtn').onclick = async function () {
         if (!currentEvent) return;
 
@@ -361,7 +358,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 showToast('נרשמת בהצלחה לאירוע');
             }
 
-            // רענון הלוח כאן
             if (calendar) {
                 await fetchEvents();
                 calendar.refetchEvents();
@@ -398,10 +394,9 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar.render();
 });
 
-
 async function sendEmergencyEmail() {
     try {
-        const response = await fetch('http://localhost:8080/api/email/emergency', {
+        const response = await fetch(`${API_URL}/api/email/emergency`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -413,19 +408,20 @@ async function sendEmergencyEmail() {
         });
 
         if (!response.ok) {
-            return;
+            throw new Error('Failed to send emergency email');
         }
 
         showToast('הודעת החירום נשלחה בהצלחה');
     } catch (error) {
-        console.error('שגיאה:', error);
+        console.error('שגיאה בשליחת הודעת חירום:', error);
+        showToast('שגיאה בשליחת הודעת חירום');
     }
 }
 
-// חיבור לכפתור
+// חיבור לכפתור חירום
 document.getElementById('emergencyButton').onclick = sendEmergencyEmail;
 
-// רק במובייל
+// התאמות למובייל
 if (window.matchMedia("(max-width: 390px)").matches) {
     const highlight = document.querySelector('.highlight');
     const navItems = document.querySelectorAll('.nav-item');

@@ -74,16 +74,36 @@ const contacts = [
 
 // יצירת פריט איש קשר
 function createContactItem(contact) {
+    let lastSeenText = '';
+    if (contact.status === 'online') {
+        lastSeenText = 'מחובר/ת';
+    } else {
+        switch (contact.lastSeen) {
+            case 'לפני שעה':
+                lastSeenText = 'לפני שעה';
+                break;
+            case 'לפני שעתיים':
+                lastSeenText = 'לפני שעתיים';
+                break;
+            default:
+                lastSeenText = 'לא מחובר/ת';
+        }
+    }
+
     return `
         <div class="contact-item" data-id="${contact.id}">
-            <div class="contact-info">
-                <div class="contact-name">${contact.name}</div>
-                <div class="contact-role">חבר/ת קהילה</div>
+            <div class="contact-item-right">
+                <div class="avatar-container">
+                    <img src="${contact.avatar}" alt="${contact.name}" class="contact-avatar">
+                    ${contact.status === 'online' ? '<span class="status-indicator online"></span>' : ''}
+                </div>
+                <div class="contact-info">
+                    <div class="contact-name">${contact.name}</div>
+                    <div class="contact-role">${contact.role}</div>
+                </div>
             </div>
-            <div class="last-seen">${contact.status === 'online' ? 'מחובר/ת' : 'לפני שעה'}</div>
-            <div class="avatar-container">
-                <img src="${contact.avatar}" alt="${contact.name}" class="contact-avatar">
-                ${contact.status === 'online' ? '<span class="status-indicator online"></span>' : ''}
+            <div class="contact-item-left">
+                <div class="last-seen">${lastSeenText}</div>
             </div>
         </div>
     `;
